@@ -356,6 +356,25 @@
     .svc-sum .svc-toggle { grid-column:2; grid-row:1; align-self:center; }
     .svc-sum-text { grid-column:1 / -1; grid-row:2; }
   }
+
+  /* ===== Section photos ===== */
+  .media-split { display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center; }
+  .media-split.reverse { grid-template-columns:0.95fr 1.05fr; }
+  .media-split.reverse .media-photo { order:-1; }
+  .media-split .section-head { grid-template-columns:1fr; gap:14px; margin-bottom:0; }
+  .media-text { min-width:0; }
+  .media-photo { margin:0; border-radius:10px; overflow:hidden; box-shadow:0 24px 60px rgba(20,22,26,0.14); aspect-ratio:4/5; background:var(--panel); }
+  .media-photo.wide { aspect-ratio:4/3; }
+  .media-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+  #contact .section-head { position:relative; padding:72px 56px; border-radius:12px; overflow:hidden; background:linear-gradient(90deg, rgba(10,14,22,0.9) 0%, rgba(10,14,22,0.66) 50%, rgba(10,14,22,0.2) 100%), url('office-dusk.webp') center 40% / cover; }
+  #contact .section-head { grid-template-columns:1fr !important; gap:14px !important; }
+  #contact .section-head .body { max-width:620px; }
+  #contact .section-head .eyebrow { margin-bottom:0; }
+  #contact .section-head h2 { color:#fff; }
+  #contact .section-head p { color:rgba(255,255,255,0.86); }
+  #contact .section-head .eyebrow, #contact .section-head .eyebrow .n { color:#6cc4ef; }
+  @media (max-width: 900px) { .media-split, .media-split.reverse { grid-template-columns:1fr; gap:28px; } .media-split.reverse .media-photo { order:0; } .media-photo, .media-photo.wide { aspect-ratio:16/10; } }
+  @media (max-width: 760px) { #contact .section-head { padding:40px 22px; background:linear-gradient(180deg, rgba(10,14,22,0.86), rgba(10,14,22,0.62)), url('office-dusk.webp') center / cover; } }
 </style>
 </head>
 <body>
@@ -387,6 +406,8 @@
 
 <section class="hero" id="top">
   <div class="wrap">
+    <div class="media-split">
+    <div class="media-text">
     <div class="hero-inner">
       <div class="eyebrow">ABOUT US</div>
       <h1 class="hero-head">About Magnum Offices</h1>
@@ -395,11 +416,16 @@
       <p class="hero-sub" style="margin-top:16px;">We bring a broader perspective to commercial real estate, combining a developer’s understanding of property with a structured advisory approach. Our work spans leasing, occupier solutions, asset advisory and emerging areas such as green leasing.</p>
       <p class="hero-sub" style="margin-top:16px;">We work with property owners, occupiers and investors to help navigate commercial real estate decisions with greater clarity, commercial understanding and discipline.</p>
     </div>
+    </div>
+    <figure class="media-photo"><img src="office-lobby.webp" alt="Bright, modern office lobby with lounge seating and plants" width="1600" height="1067" loading="lazy"></figure>
+    </div>
   </div>
 </section>
 
 <section id="developer-perspective">
   <div class="wrap">
+    <div class="media-split reverse">
+    <div class="media-text">
     <div class="section-head">
       <h2>Built on a Developer’s Perspective</h2>
       <div class="body">
@@ -407,6 +433,9 @@
         <p>Galaxy Magnum’s experience across the development lifecycle—from land and planning to development, execution and commercial positioning—provides a practical perspective on how commercial assets are created, positioned and brought to market.</p>
         <p>Magnum Offices builds on this perspective through a dedicated platform focused on leasing and advisory.</p>
       </div>
+    </div>
+    </div>
+    <figure class="media-photo"><img src="glass-tower.webp" alt="Glass-fronted Grade A office tower" width="1100" height="1661" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -521,6 +550,8 @@
 
 <section id="relationships">
   <div class="wrap">
+    <div class="media-split">
+    <div class="media-text">
     <div class="section-head">
       <h2>Relationships Beyond Transactions</h2>
       <div class="body">
@@ -528,6 +559,9 @@
         <p>Magnum Offices aims to remain relevant beyond the initial transaction by supporting ongoing communication, coordination and relationship management where required.</p>
         <p>Our objective is to build relationships that extend beyond individual transactions and create a deeper understanding of the properties, businesses and people we work with.</p>
       </div>
+    </div>
+    </div>
+    <figure class="media-photo wide"><img src="handshake.webp" alt="Business partners shaking hands after an agreement" width="1500" height="1001" loading="lazy"></figure>
     </div>
   </div>
 </section>
