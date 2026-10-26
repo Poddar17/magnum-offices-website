@@ -601,11 +601,9 @@
   const input = document.getElementById('aiInput');
   const sendBtn = document.getElementById('aiSend');
 
-  let sampleFn = null;
-  let checkedAvailability = false;
+  const ENDPOINT = '/api/advisor';
   let history = [];
-
-  const SYSTEM_CONTEXT = "You are the AI advisor embedded on the Magnum Offices website, a commercial real estate leasing and advisory company by Galaxy Magnum Group, developer-led, serving Gurugram/NCR. Our services: (1) Commercial Leasing & Advisory - strategic leasing support for landlords, including asset positioning, tenant identification, rental benchmarking and transaction coordination; (2) Occupier Solutions - advisory for businesses seeking commercial space, covering location evaluation, property selection and lease negotiation; (3) Asset & Portfolio Services - strategic asset analysis and portfolio advisory to optimise positioning, strengthen leasing performance and maximise long-term value; (4) Investment Advisory - advisory and transaction support for commercial real estate opportunities, including preliminary evaluation, sourcing and transaction coordination. Contact: hello@magnumoffices.com, 0124-4111137/4111138, Magnum Global Park, Sector 58, Golf Course Extension Road, Gurugram. Answer visitor questions about commercial real estate, leasing, or Magnum Offices' services in a professional, measured tone, in 2-4 sentences. Avoid exaggerated claims or guarantees. If asked something unrelated to commercial real estate or the company, politely redirect to what you can help with. If the person wants to talk to a person, point them to the contact section.";
+  let busy = false;
 
   function addMessage(text, role) {
     const div = document.createElement('div');
@@ -620,38 +618,18 @@
     panel.classList.add('open');
     fab.setAttribute('aria-expanded', 'true');
     fab.style.display = 'none';
-    ensureAvailabilityChecked();
     input.focus();
   }
   function closePanel() {
     panel.classList.remove('open');
     fab.setAttribute('aria-expanded', 'false');
-    fab.style.display = 'flex';
-  }
-
-  async function ensureAvailabilityChecked() {
-    if (checkedAvailability) return;
-    checkedAvailability = true;
-    try {
-      if (window.claude && typeof window.claude.use === 'function') {
-        sampleFn = await window.claude.use('sample');
-      }
-    } catch (e) {
-      sampleFn = null;
-    }
-    if (!sampleFn) {
-      const note = document.createElement('div');
-      note.className = 'ai-unavailable';
-      note.textContent = "The live AI advisor isn't available in this preview. For real assistance, please use the contact form below or reach us directly.";
-      body.appendChild(note);
-      input.disabled = true;
-      sendBtn.disabled = true;
-    }
+    fab.style.display = '';
   }
 
   async function handleSend() {
     const text = input.value.trim();
-    if (!text || !sampleFn) return;
+    if (!text || busy) return;
+    busy = true;
     input.value = '';
     sendBtn.disabled = true;
     addMessage(text, 'user');
@@ -659,27 +637,31 @@
 
     const botDiv = addMessage('Thinking…', 'bot');
     try {
-      const conversation = [{ role: 'user', content: SYSTEM_CONTEXT + '\\n\\nVisitor question: ' + text }];
-      const result = await sampleFn(conversation, {
-        modelTier: 'quick',
-        onText: function (evt) {
-          botDiv.textContent = evt.text;
-          body.scrollTop = body.scrollHeight;
-        }
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history.slice(-10) })
       });
-      const finalText = (result && result.text) ? result.text : botDiv.textContent;
-      botDiv.textContent = finalText;
-      history.push({ role: 'assistant', content: finalText });
+      const data = await res.json().catch(function () { return {}; });
+      if (!res.ok) {
+        const err = new Error(data.error || 'error');
+        err.code = data.error;
+        throw err;
+      }
+      const reply = data.text || "Sorry, I couldn't find an answer to that. Please reach us via the contact form.";
+      botDiv.textContent = reply;
+      history.push({ role: 'assistant', content: reply });
     } catch (err) {
-      const code = err && err.code;
-      if (code === 'not_granted') {
-        botDiv.textContent = "AI assistance isn't available for this view. Please use the contact form instead.";
-      } else if (code === 'rate_limited') {
+      history.pop();
+      if (err.code === 'rate_limited') {
         botDiv.textContent = "We're getting a lot of questions right now — please try again shortly.";
+      } else if (err.code === 'not_configured') {
+        botDiv.textContent = "The AI advisor is being set up. Please use the contact form below in the meantime.";
       } else {
         botDiv.textContent = "Something went wrong answering that. Please try again, or reach us via the contact form.";
       }
     } finally {
+      busy = false;
       sendBtn.disabled = false;
       body.scrollTop = body.scrollHeight;
     }
