@@ -387,6 +387,20 @@
     #home .hero-media::after { background:linear-gradient(180deg, var(--bg) 0%, var(--bg) 42%, rgba(255,255,255,0.82) 62%, rgba(255,255,255,0) 88%); }
     .about-split { grid-template-columns:1fr; gap:28px; }
     .about-photo { aspect-ratio:4/3; }
+    /* alignment */
+    .service-row { flex-direction:column; gap:12px; }
+    .service-row-body { width:100%; }
+    .insights-grid { margin:0 -20px !important; padding:4px 20px 14px !important; scroll-padding-inline:20px; }
+    .insights-grid > .insight-card:last-child { margin-right:20px; }
+    .approach-list { display:grid; gap:12px; border:0 !important; }
+    .approach-item { display:block !important; background:var(--panel); border:0 !important; border-radius:12px; padding:18px !important; }
+    .approach-num { display:block; margin-bottom:6px; font-size:0.85rem; }
+    .approach-item h3 { font-size:1rem; margin-bottom:4px; }
+    .approach-item p { font-size:0.92rem; line-height:1.6; }
+    .svc-sum { display:grid !important; grid-template-columns:1fr auto; row-gap:12px; }
+    .svc-sum .service-icon { grid-column:1; grid-row:1; margin:0; }
+    .svc-sum .svc-toggle { grid-column:2; grid-row:1; align-self:center; }
+    .svc-sum-text { grid-column:1 / -1; grid-row:2; }
   }
 </style>
 </head>
