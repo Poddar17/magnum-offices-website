@@ -272,6 +272,83 @@
   a.service-row:focus-visible { outline:2px solid var(--blue); outline-offset:4px; }
   .service-arrow { margin-left:auto; align-self:center; color:var(--blue); font-size:1.4rem; font-weight:600; opacity:.45; transition:opacity .2s, transform .2s; }
   a.service-row:hover .service-arrow, a.service-row:focus-visible .service-arrow { opacity:1; transform:translateX(4px); }
+
+  /* ===== Home photos ===== */
+  #home.hero { position:relative; overflow:hidden; min-height:620px; display:flex; flex-direction:column; justify-content:center; }
+  #home.hero > .wrap { position:relative; z-index:1; width:100%; }
+  #home .hero-inner { max-width:540px; }
+  .hero-media { position:absolute; inset:0; z-index:0; }
+  .hero-media img { width:100%; height:100%; object-fit:cover; object-position:right center; display:block; }
+  .hero-media::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, var(--bg) 0%, var(--bg) 38%, rgba(255,255,255,0.75) 58%, rgba(255,255,255,0) 85%); }
+  .about-split { display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center; }
+  .about-split .section-head { margin-bottom:0; grid-template-columns:1fr; gap:0; }
+  .about-photo { border-radius:8px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 20px 50px rgba(20,22,26,0.12); }
+  .about-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* ===== Mobile design layer ===== */
+  @media (max-width: 760px) {
+    .wrap { padding:0 20px; }
+    section { padding:52px 0; }
+    .hero { padding-top:40px; }
+    .logo img { height:38px; }
+    .eyebrow { font-size:0.72rem; letter-spacing:0.08em; margin-bottom:10px; gap:8px; }
+    #home .eyebrow { display:none; }
+    .hero-head { font-size:2.05rem !important; line-height:1.12; letter-spacing:-0.02em; }
+    .hero-tagline { font-size:1.05rem; }
+    .hero-sub { font-size:1rem; line-height:1.6; margin-top:14px; }
+    .hero-actions { display:flex; flex-direction:column; align-items:stretch; gap:10px; margin-top:26px; }
+    .hero-actions a { width:100%; text-align:center; justify-content:center; }
+    .section-head { gap:6px; margin-bottom:28px; }
+    .section-head .eyebrow { margin-bottom:0; }
+    h2, .section-head h2, .plain-head { font-size:1.55rem !important; line-height:1.22; }
+    .subsection-title { font-size:1.4rem; margin:6px 0 20px; }
+    .section-head p, .body p { font-size:0.97rem; line-height:1.65; }
+    .body p + p { margin-top:12px; }
+    .body h2 + p, .section-head h2 + p { margin-top:10px; }
+    .btn-ghost { background:var(--bg); }
+    .values-list { display:grid; gap:12px; border:0 !important; }
+    .value-row { background:var(--panel); border:0 !important; border-radius:12px; padding:18px; gap:6px; }
+    .value-row h3 { font-size:1rem; }
+    .value-row p { font-size:0.92rem; line-height:1.6; }
+    .pvm-grid { gap:12px; }
+    .pvm-card { padding:22px 20px; border-radius:12px; }
+    .service-row { gap:14px; padding:20px 0; }
+    .service-arrow { display:none; }
+    .service-icon { flex:0 0 40px; width:40px; height:40px; }
+    .service-row h3 { font-size:1.05rem; }
+    .service-row p { font-size:0.92rem; line-height:1.6; }
+    .svc-card { border-radius:12px; }
+    .svc-sum { align-items:flex-start !important; gap:14px !important; padding:18px !important; }
+    .svc-sum .service-icon { margin-top:2px; }
+    .svc-sum-text > :first-child { font-size:1.1rem !important; line-height:1.3; }
+    .svc-audience { font-size:0.8rem; margin-top:4px; }
+    .svc-tagline { font-size:0.92rem; margin-top:8px; }
+    .svc-toggle { align-self:center; flex:0 0 auto; }
+    .insights-grid { display:flex !important; overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; margin:0 -20px; padding:4px 20px 14px; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+    .insights-grid::-webkit-scrollbar { display:none; }
+    .insight-card { flex:0 0 84%; scroll-snap-align:start; border-radius:12px; padding:20px; }
+    .contact-grid { gap:28px; }
+    input, select, textarea { font-size:16px !important; }
+    .submit { width:100%; }
+    .approach-item { gap:4px; }
+    .team-grid { gap:12px; }
+    .team-card { display:grid !important; grid-template-columns:56px 1fr; column-gap:16px; align-items:center; padding:16px 18px !important; text-align:left; }
+    .team-photo { grid-row:span 3; width:56px !important; height:56px !important; margin:0 !important; font-size:1rem; }
+    .team-card h3 { font-size:1rem; margin:0 !important; }
+    .team-role { margin:2px 0 0 !important; font-size:0.85rem; }
+    .footer-row { flex-direction:column; align-items:flex-start; gap:12px; }
+    footer { padding-bottom:84px !important; }
+    .ai-fab { width:56px; height:56px; padding:0 !important; justify-content:center; font-size:0 !important; right:16px; bottom:calc(16px + env(safe-area-inset-bottom, 0px)); }
+    .ai-fab svg { width:24px; height:24px; margin:0; }
+    .article .lead { font-size:1.02rem; }
+    .article h2 { font-size:1.15rem !important; margin-top:30px; }
+    .article-cta { padding:22px; }
+    #home.hero { min-height:0; display:block; padding-bottom:240px; }
+    #home .hero-media img { object-position:38% bottom; }
+    #home .hero-media::after { background:linear-gradient(180deg, var(--bg) 0%, var(--bg) 42%, rgba(255,255,255,0.82) 62%, rgba(255,255,255,0) 88%); }
+    .about-split { grid-template-columns:1fr; gap:28px; }
+    .about-photo { aspect-ratio:4/3; }
+  }
 </style>
 </head>
 <body>
@@ -313,10 +390,12 @@
       </div>
     </div>
   </div>
+  <div class="hero-media"><img src="hero-building.webp" alt="Modern glass-fronted commercial office building" width="2000" height="1333" fetchpriority="high"></div>
 </section>
 
 <section id="about">
   <div class="wrap">
+    <div class="about-split">
     <div class="section-head">
       <div class="eyebrow"><span class="n">02</span> · ABOUT US</div>
       <div class="body">
@@ -324,6 +403,8 @@
         <p>Magnum Offices is a commercial real estate leasing and advisory company by Galaxy Magnum Group.</p>
         <p>Built on a developer-led understanding of commercial real estate, Magnum Offices works with property owners, occupiers and investors across leasing and advisory requirements.</p>
       </div>
+    </div>
+    <div class="about-photo"><img src="office-interior.webp" alt="Bright, modern office interior with lounge seating" width="1100" height="1834" loading="lazy"></div>
     </div>
 
     <div class="eyebrow" style="margin-top:72px;"><span class="n">03</span> · WHY MAGNUM OFFICES</div>
@@ -590,7 +671,7 @@
   </div>
 </footer>
 
-<button id="aiFab" class="ai-fab" aria-haspopup="dialog" aria-expanded="false">
+<button id="aiFab" class="ai-fab" aria-label="Ask our AI Advisor" aria-haspopup="dialog" aria-expanded="false">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
   Ask our AI Advisor
 </button>
