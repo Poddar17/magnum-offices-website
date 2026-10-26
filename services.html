@@ -386,25 +386,6 @@
     .svc-sum .svc-toggle { grid-column:2; grid-row:1; align-self:center; }
     .svc-sum-text { grid-column:1 / -1; grid-row:2; }
   }
-
-  /* ===== Section photos ===== */
-  .media-split { display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center; }
-  .media-split.reverse { grid-template-columns:0.95fr 1.05fr; }
-  .media-split.reverse .media-photo { order:-1; }
-  .media-split .section-head { grid-template-columns:1fr; gap:14px; margin-bottom:0; }
-  .media-text { min-width:0; }
-  .media-photo { margin:0; border-radius:10px; overflow:hidden; box-shadow:0 24px 60px rgba(20,22,26,0.14); aspect-ratio:4/5; background:var(--panel); }
-  .media-photo.wide { aspect-ratio:4/3; }
-  .media-photo img { width:100%; height:100%; object-fit:cover; display:block; }
-  #contact .section-head { position:relative; padding:72px 56px; border-radius:12px; overflow:hidden; background:linear-gradient(90deg, rgba(10,14,22,0.9) 0%, rgba(10,14,22,0.66) 50%, rgba(10,14,22,0.2) 100%), url('office-dusk.webp') center 40% / cover; }
-  #contact .section-head { grid-template-columns:1fr !important; gap:14px !important; }
-  #contact .section-head .body { max-width:620px; }
-  #contact .section-head .eyebrow { margin-bottom:0; }
-  #contact .section-head h2 { color:#fff; }
-  #contact .section-head p { color:rgba(255,255,255,0.86); }
-  #contact .section-head .eyebrow, #contact .section-head .eyebrow .n { color:#6cc4ef; }
-  @media (max-width: 900px) { .media-split, .media-split.reverse { grid-template-columns:1fr; gap:28px; } .media-split.reverse .media-photo { order:0; } .media-photo, .media-photo.wide { aspect-ratio:16/10; } }
-  @media (max-width: 760px) { #contact .section-head { padding:40px 22px; background:linear-gradient(180deg, rgba(10,14,22,0.86), rgba(10,14,22,0.62)), url('office-dusk.webp') center / cover; } }
 </style>
 </head>
 <body>
@@ -436,15 +417,10 @@
 
 <section class="hero" id="top" style="padding-bottom:48px;">
   <div class="wrap">
-    <div class="media-split">
-    <div class="media-text">
     <div class="hero-inner">
       <div class="eyebrow">SERVICES</div>
       <h1 class="hero-head">Integrated commercial real estate services.</h1>
       <p class="hero-sub">Our services are designed to address the requirements of commercial property stakeholders across leasing, occupancy, asset strategy and investment.</p>
-    </div>
-    </div>
-    <figure class="media-photo wide"><img src="office-dusk.webp" alt="Modern office campus with landscaped forecourt at dusk" width="1600" height="1085" loading="lazy"></figure>
     </div>
   </div>
 </section>
