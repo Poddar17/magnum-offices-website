@@ -133,6 +133,9 @@
   .insight-tag { font-size:0.78rem; font-weight:700; color:var(--blue); }
   .insight-card h3 { font-size:1.05rem; line-height:1.35; }
   .insight-meta { font-size:0.82rem; color:var(--grey); margin-top:auto; }
+  a.insight-card { color:inherit; text-decoration:none; transition:border-color .2s, box-shadow .2s, transform .2s; }
+  a.insight-card:hover { border-color:var(--blue); box-shadow:0 8px 24px rgba(0,0,0,0.06); transform:translateY(-2px); }
+  a.insight-card .insight-meta { color:var(--blue); font-weight:600; }
 
   .contact-paths { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:56px; }
   .path-card { background:var(--bg); padding:26px 22px; }
@@ -285,6 +288,7 @@
     <div class="navlinks">
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
+      <a href="#insights">Insights</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -292,7 +296,8 @@
     <a href="#home">Home</a>
     <a href="about.html">About</a>
       <a href="services.html">Services</a>
-    <a href="#contact">Contact</a>
+    <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
   </div>
 </header>
 
@@ -474,7 +479,7 @@
   </div>
 </section>
 
-<section id="insights" style="display:none" aria-hidden="true">
+<section id="insights">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow"><span class="n">06</span> · INSIGHTS</div>
@@ -484,42 +489,42 @@
       </div>
     </div>
     <div class="insights-grid">
-      <div class="insight-card">
+      <a class="insight-card" href="insight-commercial-leasing-process.html">
         <div class="insight-tag">LEASING GUIDE</div>
         <h3>Understanding the Commercial Leasing Process</h3>
         <p>A practical guide to the stages of commercial leasing, from requirement definition and property selection to commercial negotiations and documentation.</p>
-        <div class="insight-meta">Coming soon</div>
-      </div>
-      <div class="insight-card">
+        <div class="insight-meta">6 min read · Read article →</div>
+      </a>
+      <a class="insight-card" href="insight-landlord-leasing-checklist.html">
         <div class="insight-tag">LANDLORD ADVISORY</div>
         <h3>What Should Landlords Consider Before Leasing an Office Building?</h3>
         <p>A structured look at asset positioning, rental benchmarking, tenant targeting, building readiness and leasing strategy.</p>
-        <div class="insight-meta">Coming soon</div>
-      </div>
-      <div class="insight-card">
+        <div class="insight-meta">6 min read · Read article →</div>
+      </a>
+      <a class="insight-card" href="insight-office-location-gurugram.html">
         <div class="insight-tag">OCCUPIER SOLUTIONS</div>
         <h3>Choosing the Right Office Location in Gurugram</h3>
         <p>Key considerations for corporate occupiers evaluating access, workforce requirements, infrastructure, building specifications and occupancy costs.</p>
-        <div class="insight-meta">Coming soon</div>
-      </div>
-      <div class="insight-card">
+        <div class="insight-meta">5 min read · Read article →</div>
+      </a>
+      <a class="insight-card" href="insight-competitive-commercial-asset.html">
         <div class="insight-tag">ASSET ADVISORY</div>
         <h3>What Makes a Commercial Asset Competitive?</h3>
         <p>An overview of the factors that influence how a commercial building is positioned and evaluated by occupiers and property owners.</p>
-        <div class="insight-meta">Coming soon</div>
-      </div>
-      <div class="insight-card">
+        <div class="insight-meta">5 min read · Read article →</div>
+      </a>
+      <a class="insight-card" href="insight-office-lease-renewals.html">
         <div class="insight-tag">OCCUPIER GUIDE</div>
         <h3>Office Lease Renewals: Questions Every Occupier Should Ask</h3>
         <p>A checklist of key considerations when evaluating a renewal, relocation or renegotiation of an office lease.</p>
-        <div class="insight-meta">Coming soon</div>
-      </div>
-      <div class="insight-card">
+        <div class="insight-meta">5 min read · Read article →</div>
+      </a>
+      <a class="insight-card" href="insight-investment-due-diligence.html">
         <div class="insight-tag">INVESTMENT ADVISORY</div>
         <h3>Commercial Property Investment: An Introductory Due Diligence Checklist</h3>
         <p>An introductory checklist covering title and approvals, leases, income, property condition, expenses and professional due diligence.</p>
-        <div class="insight-meta">Coming soon</div>
-      </div>
+        <div class="insight-meta">6 min read · Read article →</div>
+      </a>
     </div>
   </div>
 </section>
@@ -527,7 +532,7 @@
 <section id="contact">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow"><span class="n">06</span> · CONTACT</div>
+      <div class="eyebrow"><span class="n">07</span> · CONTACT</div>
       <div class="body">
         <h2>Let’s Discuss Your Real Estate Requirements.</h2>
         <p>Whether you’re a landlord, occupier or investor, we’re here to help you navigate your commercial real estate objectives.</p>
@@ -585,7 +590,7 @@
   </div>
 </footer>
 
-<button id="aiFab" class="ai-fab" hidden style="display:none" aria-haspopup="dialog" aria-expanded="false">
+<button id="aiFab" class="ai-fab" aria-haspopup="dialog" aria-expanded="false">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
   Ask our AI Advisor
 </button>
