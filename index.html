@@ -440,6 +440,12 @@
     #about .values-list .value-row p { display:none; margin-top:8px; }
     #about .values-list .value-row.open p { display:block; }
   }
+
+  /* ===== Hero headline: two clean lines on mobile ===== */
+  @media (max-width: 760px) {
+    #home .hero-head { font-size:clamp(1.5rem, calc((100vw - 40px) / 11.8), 2rem) !important; line-height:1.15; }
+    #home .hero-head .hh-line { display:block; white-space:nowrap; }
+  }
 </style>
 </head>
 <body>
@@ -473,7 +479,7 @@
   <div class="wrap">
     <div class="hero-inner">
       <div class="eyebrow"><span class="n">01</span> · HOME</div>
-      <h1 class="hero-head">Commercial Real Estate. A Broader Perspective.</h1>
+      <h1 class="hero-head"><span class="hh-line">Commercial Real Estate.</span> <span class="hh-line">A Broader Perspective.</span></h1>
       <p class="hero-sub">Our developer-backed experience and advisory-led approach help landlords, occupiers and investors navigate commercial real estate with clarity.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="services.html">Explore Our Services</a>
