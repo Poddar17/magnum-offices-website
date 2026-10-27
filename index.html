@@ -454,6 +454,13 @@
     .ai-fab { gap:0 !important; line-height:0; }
     .ai-fab svg { width:26px !important; height:26px !important; }
   }
+
+  /* ===== About heading: two clean lines ===== */
+  #about .ah-line { display:block; }
+  @media (max-width: 760px) {
+    #about .about-split .section-head h2 { font-size:clamp(1.25rem, calc((100vw - 80px) / 12.8), 1.6rem) !important; line-height:1.25; }
+    #about .ah-line { white-space:nowrap; }
+  }
 </style>
 </head>
 <body>
@@ -504,7 +511,7 @@
     <div class="section-head">
       <div class="eyebrow"><span class="n">02</span> · ABOUT US</div>
       <div class="body">
-        <h2>A developer's experience. An advisory approach.</h2>
+        <h2><span class="ah-line">A developer’s experience.</span> <span class="ah-line">An advisory approach.</span></h2>
         <p>Magnum Offices is a commercial real estate leasing and advisory platform backed by Galaxy Magnum Group.</p>
         <a class="about-more" href="about.html">About Magnum Offices →</a>
       </div>
