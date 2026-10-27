@@ -403,6 +403,19 @@
     #developer-perspective .body p:first-child { font-size:1.15rem !important; line-height:1.5; color:var(--fg); font-weight:600; border-left:3px solid #0094d9; padding-left:16px; }
     #developer-perspective .body p:nth-of-type(3) { display:none; }
   }
+
+  /* ===== Founder block ===== */
+  .founder-card { display:flex; align-items:center; gap:28px; background:var(--panel); border-left:4px solid var(--blue); border-radius:12px; padding:36px 40px; }
+  .founder-avatar { flex:0 0 84px; width:84px; height:84px; border-radius:50%; background:var(--bg); color:var(--blue); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.5rem; box-shadow:0 6px 18px rgba(20,22,26,0.08); }
+  .founder-card .eyebrow { margin-bottom:8px; }
+  .founder-name { font-size:1.35rem; margin:0; }
+  .founder-role { color:var(--grey); font-size:0.92rem; margin-top:2px; }
+  .founder-text { margin-top:14px; max-width:640px; line-height:1.65; }
+  @media (max-width: 760px) {
+    .founder-card { flex-direction:column; align-items:flex-start; gap:16px; padding:24px 20px; }
+    .founder-avatar { flex-basis:64px; width:64px; height:64px; font-size:1.15rem; }
+    .founder-name { font-size:1.2rem; }
+  }
 </style>
 </head>
 <body>
@@ -562,6 +575,20 @@
         <div class="eyebrow">OUR MISSION</div>
         <h3>Informed decisions, realised potential.</h3>
         <p>To combine market intelligence, developer experience and transaction expertise to help clients make informed decisions and realise the potential of their commercial real estate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="wrap">
+    <div class="founder-card">
+      <div class="founder-avatar" aria-hidden="true">PP</div>
+      <div>
+        <div class="eyebrow">FOUNDER</div>
+        <h2 class="founder-name">Pranav Poddar</h2>
+        <div class="founder-role">Founder &amp; Managing Director</div>
+        <p class="founder-text">Founded by Pranav Poddar, Magnum Offices brings Galaxy Magnum Group’s development experience to commercial leasing and advisory.</p>
       </div>
     </div>
   </div>
