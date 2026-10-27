@@ -461,6 +461,13 @@
     #about .about-split .section-head h2 { font-size:clamp(1.25rem, calc((100vw - 80px) / 12.8), 1.6rem) !important; line-height:1.25; }
     #about .ah-line { white-space:nowrap; }
   }
+
+  /* ===== Section headings: two clean lines ===== */
+  #services h2 .hl, #insights h2 .hl, #contact h2 .hl { display:block; }
+  @media (max-width: 760px) {
+    #services .section-head h2, #insights .section-head h2, #contact .section-head h2 { font-size:clamp(1.25rem, calc((100vw - 40px) / 12.8), 1.6rem) !important; line-height:1.22; }
+    #services h2 .hl, #insights h2 .hl, #contact h2 .hl { white-space:nowrap; }
+  }
 </style>
 </head>
 <body>
@@ -566,7 +573,7 @@
     <div class="section-head">
       <div class="eyebrow"><span class="n">04</span> · SERVICES</div>
       <div class="body">
-        <h2>Integrated commercial real estate services.</h2>
+        <h2><span class="hl">Integrated commercial</span> <span class="hl">real estate services.</span></h2>
         <p>One partner for every commercial real estate decision.</p>
       </div>
     </div>
@@ -648,7 +655,7 @@
     <div class="section-head">
       <div class="eyebrow"><span class="n">05</span> · INSIGHTS</div>
       <div class="body">
-        <h2>Perspectives on Commercial Real Estate</h2>
+        <h2><span class="hl">Perspectives on</span> <span class="hl">Commercial Real Estate</span></h2>
         <p>Practical guidance for better commercial real estate decisions.</p>
       </div>
     </div>
@@ -698,7 +705,7 @@
     <div class="section-head">
       <div class="eyebrow"><span class="n">06</span> · CONTACT</div>
       <div class="body">
-        <h2>Let’s Discuss Your Real Estate Requirements.</h2>
+        <h2><span class="hl">Let’s Discuss Your</span> <span class="hl">Real Estate Requirements.</span></h2>
         <p>Whether you’re a landlord, occupier or investor, we’re here to help you navigate your commercial real estate objectives.</p>
       </div>
     </div>
