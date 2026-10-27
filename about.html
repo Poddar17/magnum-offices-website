@@ -383,6 +383,20 @@
     #about .pvm-card, #purpose .pvm-card { flex:0 0 84%; scroll-snap-align:start; }
     #about .pvm-grid > .pvm-card:last-child, #purpose .pvm-grid > .pvm-card:last-child { margin-right:20px; }
   }
+
+  /* ===== About: photo hero on mobile ===== */
+  .about-hero-media { display:none; }
+  @media (max-width: 760px) {
+    #top .hero-inner p.hero-sub ~ p.hero-sub { display:none !important; }
+    #top.hero { position:relative; overflow:hidden; min-height:calc(100svh - 64px); display:flex; flex-direction:column; justify-content:flex-end; padding:0 0 36px !important; }
+    #top.hero > .wrap { position:relative; z-index:1; width:100%; }
+    .about-hero-media { display:block; position:absolute; inset:0; z-index:0; }
+    .about-hero-media img { width:100%; height:100%; object-fit:cover; object-position:55% center; display:block; }
+    .about-hero-media::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,14,22,0.05) 0%, rgba(10,14,22,0.5) 40%, rgba(10,14,22,0.93) 100%); }
+    #top .hero-head { color:#fff; }
+    #top .hero-tagline, #top .eyebrow { color:#6cc4ef; }
+    #top .hero-sub { color:rgba(255,255,255,0.86); }
+  }
 </style>
 </head>
 <body>
@@ -423,6 +437,7 @@
       <p class="hero-sub" style="margin-top:16px;">We work with property owners, occupiers and investors to help navigate commercial real estate decisions with greater clarity, commercial understanding and discipline.</p>
     </div>
   </div>
+  <div class="about-hero-media" aria-hidden="true"><img src="office-lobby.webp" alt="" width="1600" height="1067" fetchpriority="high"></div>
 </section>
 
 <section id="developer-perspective">
