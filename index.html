@@ -446,6 +446,14 @@
     #home .hero-head { font-size:clamp(1.5rem, calc((100vw - 40px) / 11.8), 2rem) !important; line-height:1.15; }
     #home .hero-head .hh-line { display:block; white-space:nowrap; }
   }
+
+  /* ===== AI button: centred icon ===== */
+  .ai-fab svg { margin:0 !important; display:block; flex:0 0 auto; }
+  .ai-fab { box-shadow:0 10px 28px rgba(0,148,217,0.38); }
+  @media (max-width: 760px) {
+    .ai-fab { gap:0 !important; line-height:0; }
+    .ai-fab svg { width:26px !important; height:26px !important; }
+  }
 </style>
 </head>
 <body>
@@ -739,7 +747,7 @@
 </footer>
 
 <button id="aiFab" class="ai-fab" aria-label="Ask our AI Advisor" aria-haspopup="dialog" aria-expanded="false">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h7"/><path d="M18.5 2l.85 2.15L21.5 5l-2.15.85L18.5 8l-.85-2.15L15.5 5l2.15-.85z" fill="currentColor" stroke="none"/></svg>
   Ask our AI Advisor
 </button>
 
