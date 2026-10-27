@@ -428,6 +428,18 @@
     #services .service-icon { background:rgba(255,255,255,0.1); color:#fff; }
     #services .service-row-body::after { content:'Learn more \2192'; display:block; margin-top:14px; font-weight:600; font-size:0.9rem; color:#6cc4ef; }
   }
+
+  /* ===== Why Magnum: tap to expand on mobile ===== */
+  @media (max-width: 760px) {
+    #about .values-list { gap:0 !important; }
+    #about .values-list .value-row { background:transparent !important; border-radius:0 !important; border-bottom:1px solid var(--line) !important; padding:16px 0 !important; cursor:pointer; }
+    #about .values-list .value-row:first-child { border-top:1px solid var(--line) !important; }
+    #about .values-list .value-row h3 { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:1rem; }
+    #about .values-list .value-row h3::after { content:'+'; flex:0 0 auto; font-size:1.35rem; font-weight:400; line-height:1; color:#0094d9; transition:transform .2s; }
+    #about .values-list .value-row.open h3::after { transform:rotate(45deg); }
+    #about .values-list .value-row p { display:none; margin-top:8px; }
+    #about .values-list .value-row.open p { display:block; }
+  }
 </style>
 </head>
 <body>
@@ -914,6 +926,20 @@
     }
     note.style.display = 'block';
     btn.disabled = false; btn.textContent = label;
+  });
+})();
+</script>
+<script>
+(function () {
+  var rows = document.querySelectorAll("#about .values-list .value-row");
+  rows.forEach(function (row, i) {
+    row.setAttribute("role", "button");
+    row.setAttribute("tabindex", "0");
+    if (i === 0) row.classList.add("open");
+    row.setAttribute("aria-expanded", i === 0 ? "true" : "false");
+    function toggle() { var o = row.classList.toggle("open"); row.setAttribute("aria-expanded", o ? "true" : "false"); }
+    row.addEventListener("click", toggle);
+    row.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
   });
 })();
 </script>
