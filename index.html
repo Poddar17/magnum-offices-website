@@ -408,6 +408,14 @@
     #about .about-split .section-head h2 { font-size:1.45rem !important; line-height:1.25; }
     #about .about-more { display:flex; width:100%; margin-top:18px; }
   }
+
+  /* ===== Purpose, Vision & Mission: swipe cards on mobile ===== */
+  @media (max-width: 760px) {
+    #about .pvm-grid, #purpose .pvm-grid { display:flex !important; overflow-x:auto; scroll-snap-type:x mandatory; gap:12px !important; margin:0 -20px !important; padding:4px 20px 14px !important; scroll-padding-inline:20px; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+    #about .pvm-grid::-webkit-scrollbar, #purpose .pvm-grid::-webkit-scrollbar { display:none; }
+    #about .pvm-card, #purpose .pvm-card { flex:0 0 84%; scroll-snap-align:start; }
+    #about .pvm-grid > .pvm-card:last-child, #purpose .pvm-grid > .pvm-card:last-child { margin-right:20px; }
+  }
 </style>
 </head>
 <body>
