@@ -400,6 +400,14 @@
     #about .about-photo { aspect-ratio:4/3 !important; border-radius:14px; box-shadow:none; }
     #about .about-split .section-head { background:var(--bg); margin:-64px 14px 0 !important; position:relative; z-index:1; padding:24px 20px !important; border-radius:14px; box-shadow:0 14px 40px rgba(20,22,26,0.14); }
   }
+
+  /* ===== About: read more button ===== */
+  #about .about-more { display:inline-flex; align-items:center; justify-content:center; margin-top:24px; padding:13px 24px; border:1px solid var(--fg); border-radius:6px; color:var(--fg); font-weight:600; font-size:0.95rem; text-decoration:none; transition:background .2s, color .2s; }
+  #about .about-more:hover { background:var(--fg); color:var(--bg); }
+  @media (max-width: 760px) {
+    #about .about-split .section-head h2 { font-size:1.45rem !important; line-height:1.25; }
+    #about .about-more { display:flex; width:100%; margin-top:18px; }
+  }
 </style>
 </head>
 <body>
@@ -452,7 +460,7 @@
       <div class="body">
         <h2>A developer's experience. An advisory approach.</h2>
         <p>Magnum Offices is a commercial real estate leasing and advisory company by Galaxy Magnum Group.</p>
-        <p>Built on a developer-led understanding of commercial real estate, Magnum Offices works with property owners, occupiers and investors across leasing and advisory requirements.</p>
+        <a class="about-more" href="about.html">About Magnum Offices →</a>
       </div>
     </div>
     <div class="about-photo"><img src="office-interior.webp" alt="Bright, modern office interior with lounge seating" width="1100" height="1834" loading="lazy"></div>
