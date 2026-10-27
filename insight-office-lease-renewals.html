@@ -402,6 +402,25 @@
     .svc-sum .svc-toggle { grid-column:2; grid-row:1; align-self:center; }
     .svc-sum-text { grid-column:1 / -1; grid-row:2; }
   }
+
+  /* ===== Header layout ===== */
+  nav.wrap { gap:24px; }
+  .nav-left { flex:1; min-width:0; }
+  .logo { display:flex; align-items:center; line-height:0; }
+  .navlinks { align-items:center; }
+  .navlinks a:last-child { background:var(--blue); color:#fff; opacity:1; padding:10px 20px; border-radius:6px; font-weight:600; }
+  .navlinks a:last-child:hover { background:var(--blue-deep); }
+  @media (min-width: 901px) { .menu-toggle { display:none !important; } }
+  @media (max-width: 900px) {
+    nav.wrap { height:64px; }
+    .nav-left { justify-content:space-between; width:100%; }
+    .logo { order:1; }
+    .logo img { height:36px !important; }
+    .menu-toggle { order:2; width:44px; height:44px; padding:0 !important; font-size:0 !important; gap:0; border-radius:10px; }
+    .menu-toggle svg { width:22px; height:22px; }
+    .mobile-menu a { padding:16px 20px; }
+    .mobile-menu a:last-child { margin:12px 20px 16px; background:var(--blue); color:#fff; border-radius:8px; text-align:center; border-top:none; font-weight:600; }
+  }
 </style>
 </head>
 <body>
@@ -409,7 +428,7 @@
 <header>
   <nav class="wrap">
     <div class="nav-left">
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuPanel">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
         Menu
       </button>
