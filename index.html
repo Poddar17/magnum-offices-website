@@ -416,6 +416,18 @@
     #about .pvm-card, #purpose .pvm-card { flex:0 0 84%; scroll-snap-align:start; }
     #about .pvm-grid > .pvm-card:last-child, #purpose .pvm-grid > .pvm-card:last-child { margin-right:20px; }
   }
+
+  /* ===== Services: dark swipe cards on mobile ===== */
+  @media (max-width: 760px) {
+    #services .services-list { display:flex !important; flex-direction:row !important; flex-wrap:nowrap !important; align-items:stretch; overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; margin:0 -20px !important; padding:4px 20px 16px !important; scroll-padding-inline:20px; scrollbar-width:none; border:0 !important; -webkit-overflow-scrolling:touch; }
+    #services .services-list::-webkit-scrollbar { display:none; }
+    #services .service-row { flex:0 0 80%; scroll-snap-align:start; flex-direction:column; gap:14px; padding:22px 20px !important; border:0 !important; border-radius:14px; text-decoration:none; background:#101826; }
+    #services .services-list > .service-row:last-child { margin-right:20px; }
+    #services .service-row h3 { color:#fff; }
+    #services .service-row p { color:rgba(255,255,255,0.75); font-size:0.92rem; line-height:1.6; }
+    #services .service-icon { background:rgba(255,255,255,0.1); color:#fff; }
+    #services .service-row-body::after { content:'Learn more \2192'; display:block; margin-top:14px; font-weight:600; font-size:0.9rem; color:#6cc4ef; }
+  }
 </style>
 </head>
 <body>
