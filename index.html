@@ -393,6 +393,13 @@
     .mobile-menu a { padding:16px 20px; }
     .mobile-menu a:last-child { margin:12px 20px 16px; background:var(--blue); color:#fff; border-radius:8px; text-align:center; border-top:none; font-weight:600; }
   }
+
+  /* ===== Mobile About: overlapping card ===== */
+  @media (max-width: 760px) {
+    #about .about-split { display:flex !important; flex-direction:column-reverse; gap:0 !important; }
+    #about .about-photo { aspect-ratio:4/3 !important; border-radius:14px; box-shadow:none; }
+    #about .about-split .section-head { background:var(--bg); margin:-64px 14px 0 !important; position:relative; z-index:1; padding:24px 20px !important; border-radius:14px; box-shadow:0 14px 40px rgba(20,22,26,0.14); }
+  }
 </style>
 </head>
 <body>
