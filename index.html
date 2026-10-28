@@ -468,6 +468,19 @@
     #services .section-head h2, #insights .section-head h2, #contact .section-head h2 { font-size:clamp(1.25rem, calc((100vw - 40px) / 12.8), 1.6rem) !important; line-height:1.22; }
     #services h2 .hl, #insights h2 .hl, #contact h2 .hl { white-space:nowrap; }
   }
+
+  /* ===== Founder's message (centred quote) ===== */
+  #founder-message .fm { display:flex; flex-direction:column-reverse; align-items:center; text-align:center; max-width:860px; margin:0 auto; }
+  #founder-message .fm-body { display:contents; }
+  #founder-message .eyebrow { order:3; justify-content:center; }
+  #founder-message .fm-quote { order:2; margin:6px 0 0; }
+  #founder-message .fm-quote p { margin:0; font-size:1.3rem; line-height:1.7; color:var(--fg); font-weight:500; }
+  #founder-message .fm-photo { order:1; margin:30px 0 0; width:96px; height:96px; border-radius:50%; overflow:hidden; box-shadow:0 8px 24px rgba(20,22,26,0.12); }
+  #founder-message .fm-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+  #founder-message .fm-sign { order:0; margin-top:12px; }
+  #founder-message .fm-sign strong { display:block; font-size:1.05rem; }
+  #founder-message .fm-sign span { display:block; font-size:0.9rem; margin-top:2px; color:var(--grey); }
+  @media (max-width: 760px) { #founder-message .fm-quote p { font-size:1.05rem; } #founder-message .fm-photo { width:80px; height:80px; } }
 </style>
 </head>
 <body>
@@ -563,6 +576,19 @@
         <div class="eyebrow">OUR MISSION</div>
         <h3>Informed decisions, realised potential.</h3>
         <p>To combine market intelligence, developer experience and transaction expertise to help clients make informed decisions and realise the potential of their commercial real estate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founder-message">
+  <div class="wrap">
+    <div class="fm">
+      <figure class="fm-photo"><img src="founder-pranav.webp" alt="Pranav Poddar, Founder, Magnum Offices" width="425" height="484" loading="lazy"></figure>
+      <div class="fm-body">
+        <div class="eyebrow">FOUNDER’S MESSAGE</div>
+        <blockquote class="fm-quote"><p>“My experience in real estate has shaped a clear belief that successful commercial assets require more than market knowledge—they demand strategic foresight, operational understanding, and long-term commitment. With the strength and development expertise of Galaxy Magnum behind us, I founded Magnum Offices to bring this perspective into real estate advisory. My vision is to build a trusted, knowledge-driven platform that delivers meaningful value through expertise, integrity, and execution.”</p></blockquote>
+        <div class="fm-sign"><strong>Pranav Poddar</strong><span>Founder, Magnum Offices</span></div>
       </div>
     </div>
   </div>
