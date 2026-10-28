@@ -491,6 +491,15 @@
     #founder-message .eyebrow::after { content:''; display:block; width:36px; height:3px; background:var(--blue); border-radius:2px; margin-left:12px; }
     #founder-message .fm-sign { padding-top:18px; border-top:1px solid var(--line); }
   }
+
+  /* ===== Founder message: airy text on mobile ===== */
+  @media (max-width: 760px) {
+    #founder-message .fm-quote p { font-size:1rem !important; line-height:1.85 !important; }
+    #founder-message .fm-quote p + p { margin-top:22px !important; }
+    #founder-message .fm-quote p.fm-lead { font-size:1.05rem !important; font-weight:500 !important; line-height:1.8 !important; }
+    #founder-message .fm-sign { margin-top:32px !important; }
+    #founder-message .eyebrow { margin-bottom:18px !important; }
+  }
 </style>
 </head>
 <body>
