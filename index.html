@@ -500,6 +500,19 @@
     #founder-message .fm-sign { margin-top:32px !important; }
     #founder-message .eyebrow { margin-bottom:18px !important; }
   }
+
+  /* ===== Founder message: compact card + read more on mobile ===== */
+  #founder-message .fm-more { display:none; }
+  @media (max-width: 760px) {
+    #founder-message .fm { background:var(--panel); border-radius:16px; padding:22px 20px; }
+    #founder-message .eyebrow::after { display:none !important; }
+    #founder-message .fm-quote p:not(.fm-lead) { display:none; }
+    #founder-message .fm.open .fm-quote p { display:block; }
+    #founder-message .fm-quote p.fm-lead { font-size:1.08rem !important; font-weight:600 !important; line-height:1.6 !important; text-indent:0 !important; }
+    #founder-message .fm-quote p { font-size:0.95rem !important; line-height:1.8 !important; }
+    #founder-message .fm-sign { border-top:1px solid var(--line) !important; margin-top:18px !important; padding-top:16px !important; }
+    #founder-message .fm-more { display:flex; width:100%; justify-content:center; margin-top:14px; padding:12px; border:1px solid var(--fg); border-radius:8px; background:transparent; font:600 0.92rem 'Plus Jakarta Sans', sans-serif; color:var(--fg); cursor:pointer; }
+  }
 </style>
 </head>
 <body>
@@ -609,6 +622,7 @@
         <p>I founded Magnum Offices with a vision to bring this understanding into a more strategic and client-focused advisory business.</p>
         <p>Backed by the experience and capabilities of Galaxy Magnum, we aim to combine practical industry knowledge, market insight, and professional execution to create lasting value for our clients.”</p>
       </blockquote>
+      <button class="fm-more" type="button" aria-expanded="false">Read full message</button>
       <div class="fm-sign"><img src="founder-pranav.webp" alt="Pranav Poddar, Founder, Magnum Offices" width="425" height="484" loading="lazy"><div><strong>Pranav Poddar</strong><span>Founder, Magnum Offices</span></div></div>
     </div>
   </div>
@@ -985,6 +999,18 @@
     function toggle() { var o = row.classList.toggle("open"); row.setAttribute("aria-expanded", o ? "true" : "false"); }
     row.addEventListener("click", toggle);
     row.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  });
+})();
+</script>
+<script>
+(function () {
+  var fm = document.querySelector("#founder-message .fm");
+  var btn = document.querySelector("#founder-message .fm-more");
+  if (!fm || !btn) return;
+  btn.addEventListener("click", function () {
+    var open = fm.classList.toggle("open");
+    btn.textContent = open ? "Show less" : "Read full message";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
   });
 })();
 </script>
