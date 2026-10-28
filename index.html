@@ -469,18 +469,19 @@
     #services h2 .hl, #insights h2 .hl, #contact h2 .hl { white-space:nowrap; }
   }
 
-  /* ===== Founder's message (centred quote) ===== */
-  #founder-message .fm { display:flex; flex-direction:column-reverse; align-items:center; text-align:center; max-width:860px; margin:0 auto; }
-  #founder-message .fm-body { display:contents; }
-  #founder-message .eyebrow { order:3; justify-content:center; }
-  #founder-message .fm-quote { order:2; margin:6px 0 0; }
-  #founder-message .fm-quote p { margin:0; font-size:1.3rem; line-height:1.7; color:var(--fg); font-weight:500; }
-  #founder-message .fm-photo { order:1; margin:30px 0 0; width:96px; height:96px; border-radius:50%; overflow:hidden; box-shadow:0 8px 24px rgba(20,22,26,0.12); }
-  #founder-message .fm-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
-  #founder-message .fm-sign { order:0; margin-top:12px; }
-  #founder-message .fm-sign strong { display:block; font-size:1.05rem; }
-  #founder-message .fm-sign span { display:block; font-size:0.9rem; margin-top:2px; color:var(--grey); }
-  @media (max-width: 760px) { #founder-message .fm-quote p { font-size:1.05rem; } #founder-message .fm-photo { width:80px; height:80px; } }
+
+  /* ===== Founder's message (left-aligned + accent line) ===== */
+  #founder-message .fm { max-width:780px; }
+  #founder-message .eyebrow { margin-bottom:14px; }
+  #founder-message .fm-quote { margin:0; border-left:3px solid var(--blue); padding-left:22px; }
+  #founder-message .fm-quote p { margin:0; font-size:1.02rem; line-height:1.75; color:var(--grey); }
+  #founder-message .fm-quote p + p { margin-top:14px; }
+  #founder-message .fm-quote p.fm-lead { font-size:1.22rem; line-height:1.55; color:var(--fg); font-weight:600; }
+  #founder-message .fm-sign { display:flex; align-items:center; gap:14px; margin-top:26px; }
+  #founder-message .fm-sign img { width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:center top; box-shadow:0 6px 16px rgba(20,22,26,0.12); }
+  #founder-message .fm-sign strong { display:block; font-size:1rem; }
+  #founder-message .fm-sign span { display:block; font-size:0.85rem; color:var(--grey); margin-top:2px; }
+  @media (max-width: 760px) { #founder-message .fm-quote { padding-left:16px; } #founder-message .fm-quote p { font-size:0.95rem; } #founder-message .fm-quote p.fm-lead { font-size:1.06rem; } }
 </style>
 </head>
 <body>
@@ -584,12 +585,13 @@
 <section id="founder-message">
   <div class="wrap">
     <div class="fm">
-      <figure class="fm-photo"><img src="founder-pranav.webp" alt="Pranav Poddar, Founder, Magnum Offices" width="425" height="484" loading="lazy"></figure>
-      <div class="fm-body">
-        <div class="eyebrow">FOUNDER’S MESSAGE</div>
-        <blockquote class="fm-quote"><p>“My experience in real estate has shaped a clear belief that successful commercial assets require more than market knowledge—they demand strategic foresight, operational understanding, and long-term commitment. With the strength and development expertise of Galaxy Magnum behind us, I founded Magnum Offices to bring this perspective into real estate advisory. My vision is to build a trusted, knowledge-driven platform that delivers meaningful value through expertise, integrity, and execution.”</p></blockquote>
-        <div class="fm-sign"><strong>Pranav Poddar</strong><span>Founder, Magnum Offices</span></div>
-      </div>
+      <div class="eyebrow">FOUNDER’S MESSAGE</div>
+      <blockquote class="fm-quote">
+        <p class="fm-lead">“My experience in real estate has shaped a clear belief that successful commercial assets require more than market knowledge—they demand strategic foresight, operational understanding, and long-term commitment.</p>
+        <p>With the strength and development expertise of Galaxy Magnum behind us, I founded Magnum Offices to bring this perspective into real estate advisory.</p>
+        <p>My vision is to build a trusted, knowledge-driven platform that delivers meaningful value through expertise, integrity, and execution.”</p>
+      </blockquote>
+      <div class="fm-sign"><img src="founder-pranav.webp" alt="Pranav Poddar, Founder, Magnum Offices" width="425" height="484" loading="lazy"><div><strong>Pranav Poddar</strong><span>Founder, Magnum Offices</span></div></div>
     </div>
   </div>
 </section>
