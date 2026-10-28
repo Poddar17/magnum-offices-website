@@ -482,6 +482,15 @@
   #founder-message .fm-sign strong { display:block; font-size:1rem; }
   #founder-message .fm-sign span { display:block; font-size:0.85rem; color:var(--grey); margin-top:2px; }
   @media (max-width: 760px) { #founder-message .fm-quote { padding-left:16px; } #founder-message .fm-quote p { font-size:0.95rem; } #founder-message .fm-quote p.fm-lead { font-size:1.06rem; } }
+
+  /* ===== Founder message: clean column on mobile ===== */
+  @media (max-width: 760px) {
+    #founder-message .fm-quote { border-left:0 !important; padding-left:0 !important; }
+    #founder-message .fm-quote p.fm-lead { text-indent:-0.42em; }
+    #founder-message .eyebrow { margin-bottom:10px; }
+    #founder-message .eyebrow::after { content:''; display:block; width:36px; height:3px; background:var(--blue); border-radius:2px; margin-left:12px; }
+    #founder-message .fm-sign { padding-top:18px; border-top:1px solid var(--line); }
+  }
 </style>
 </head>
 <body>
